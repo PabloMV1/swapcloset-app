@@ -1,0 +1,78 @@
+
+<ion-content class="pantalla-tratos">
+
+  <div class="contenedor">
+
+    <h1>Mis Tratos</h1>
+    <p class="subtitulo">Tus intercambios del campus</p>
+
+    <div class="pestanas">
+
+      <button
+        [class.activa]="pestana === 'Activos'"
+        (click)="pestana = 'Activos'">
+        Activos (2)
+      </button>
+
+      <button
+        [class.activa]="pestana === 'Pendientes'"
+        (click)="pestana = 'Pendientes'">
+        Pendientes (1)
+      </button>
+
+      <button
+        [class.activa]="pestana === 'Historial'"
+        (click)="pestana = 'Historial'">
+        Historial (3)
+      </button>
+
+    </div>
+
+    <div class="lista-tratos">
+
+      @for (trato of tratosFiltrados; track trato.id) {
+
+        <div class="tarjeta-trato">
+
+          <div class="cabecera-trato">
+
+            <img [src]="trato.imagen"
+                 [alt]="trato.prenda">
+
+            <div>
+              <h3>{{ trato.prenda }}</h3>
+              <p>Con {{ trato.usuario }}</p>
+            </div>
+
+          </div>
+
+          <div class="informacion">
+
+            <span class="tipo">{{ trato.tipo }}</span>
+
+            <span class="fecha">{{ trato.fecha }}</span>
+
+          </div>
+
+          <ion-button
+            expand="block"
+            class="boton-trato"
+            (click)="verTrato(trato.id)">
+            {{ trato.accion }}
+          </ion-button>
+
+        </div>
+
+      } @empty {
+
+        <div class="sin-tratos">
+          <p>No tienes tratos en esta sección.</p>
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,167 @@
+
+<ion-content class="pantalla-closet">
+
+  <div class="contenedor">
+
+    <div class="cabecera">
+      <h1>Mi Clóset</h1>
+      <p>Tu espacio de moda circular</p>
+    </div>
+
+    <div class="perfil">
+      <div class="avatar">M</div>
+
+      <div class="datos">
+        <h2>Mariana Gómez</h2>
+        <p>Arquitectura · U. de Diseño</p>
+        <span>Estilo vintage y casual</span>
+      </div>
+    </div>
+
+    <div class="tallas">
+      <span>Arriba: S</span>
+      <span>Abajo: 36</span>
+      <span>Calzado: 38</span>
+    </div>
+
+    <div class="estadisticas">
+      <div>
+        <strong>4</strong>
+        <small>Prendas</small>
+      </div>
+
+      <div>
+        <strong>3</strong>
+        <small>Intercambios</small>
+      </div>
+
+      <div>
+        <strong>4.8 ★</strong>
+        <small>Valoración</small>
+      </div>
+    </div>
+
+    <div class="pestanas">
+
+      <button
+        [class.activa]="seccion === 'prendas'"
+        (click)="seccion = 'prendas'">
+        Mis prendas
+      </button>
+
+      <button
+        [class.activa]="seccion === 'intercambios'"
+        (click)="seccion = 'intercambios'">
+        Mis tratos
+      </button>
+
+      <button
+        [class.activa]="seccion === 'resenas'"
+        (click)="seccion = 'resenas'">
+        Reseñas
+      </button>
+
+    </div>
+
+    @if (seccion === 'prendas') {
+
+      <div class="titulo-seccion">
+        <h3>Mis prendas</h3>
+        <span>{{ prendas.length }} publicaciones</span>
+      </div>
+
+      <div class="cuadricula">
+
+        @for (prenda of prendas; track prenda.nombre) {
+
+          <div class="tarjeta">
+            <img [src]="prenda.imagen"
+                 [alt]="prenda.nombre">
+
+            <span class="tipo">{{ prenda.tipo }}</span>
+
+            <h4>{{ prenda.nombre }}</h4>
+            <p>Talla {{ prenda.talla }}</p>
+          </div>
+
+        }
+
+      </div>
+
+      <ion-button
+        expand="block"
+        class="boton-principal"
+        routerLink="/tabs/publicar">
+        + Publicar otra prenda
+      </ion-button>
+
+    }
+
+    @if (seccion === 'intercambios') {
+
+      <h3>Mis intercambios</h3>
+
+      @for (trato of tratos; track trato.prenda) {
+
+        <div class="tarjeta-trato">
+          <strong>{{ trato.prenda }}</strong>
+          <p>Con {{ trato.usuario }}</p>
+
+          <div class="datos-trato">
+            <span>{{ trato.tipo }}</span>
+            <span>{{ trato.fecha }}</span>
+          </div>
+        </div>
+
+      }
+
+      <ion-button
+        expand="block"
+        class="boton-principal"
+        routerLink="/mis-intercambios">
+        Ver todos mis tratos
+      </ion-button>
+
+    }
+
+    @if (seccion === 'resenas') {
+
+      <div class="valoracion">
+        <h2>4.8 ★</h2>
+        <p>Valoración media de tu perfil</p>
+      </div>
+
+      @for (resena of resenas; track resena.nombre) {
+
+        <div class="tarjeta-resena">
+          <div class="resena-cabecera">
+            <strong>{{ resena.nombre }}</strong>
+            <span>★★★★★</span>
+          </div>
+
+          <p>{{ resena.comentario }}</p>
+        </div>
+
+      }
+
+    }
+
+    <h3>Mi cuenta</h3>
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      routerLink="/notificaciones">
+      🔔 Notificaciones
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      routerLink="/ajustes">
+      ⚙️ Ajustes y seguridad
+    </ion-button>
+
+  </div>
+
+</ion-content>

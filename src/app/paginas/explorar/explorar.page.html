@@ -1,0 +1,68 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SwapCloset</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="contenedor">
+
+    <p class="saludo">¡Hola, Mariana! 👋</p>
+
+    <h1>Explora el campus</h1>
+
+    <p class="descripcion">
+      Descubre prendas para intercambiar o pedir prestadas.
+    </p>
+
+    <ion-searchbar
+      [(ngModel)]="busqueda"
+      placeholder="¿Qué te vas a poner hoy?">
+    </ion-searchbar>
+
+    <div class="categorias">
+      @for (categoria of categorias; track categoria) {
+
+        <ion-chip
+          [color]="filtro === categoria ? 'primary' : undefined"
+          (click)="filtro = categoria">
+          {{ categoria }}
+        </ion-chip>
+
+      }
+    </div>
+
+    <h2>Prendas disponibles</h2>
+
+    <div class="productos">
+
+      @for (prenda of prendasFiltradas; track prenda.id) {
+
+        <div class="producto"
+             (click)="abrirPrenda(prenda.id)"
+             role="button"
+             tabindex="0"
+             (keydown.enter)="abrirPrenda(prenda.id)">
+
+          <img [src]="prenda.imagen"
+               [alt]="prenda.nombre">
+
+          <h3>{{ prenda.nombre }}</h3>
+
+          <p>
+            Talla {{ prenda.talla }} · {{ prenda.tipo }}
+          </p>
+
+        </div>
+
+      } @empty {
+        <p>No hay prendas con esos filtros.</p>
+      }
+
+    </div>
+
+  </div>
+
+</ion-content>

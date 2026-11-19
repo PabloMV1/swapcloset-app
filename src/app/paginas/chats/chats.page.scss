@@ -1,0 +1,133 @@
+
+.pantalla-chats {
+  --background: #ffffff;
+}
+
+.contenedor {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+h1 {
+  color: #202124;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #777b87;
+  margin: 0 0 20px;
+}
+
+ion-searchbar {
+  --background: #f5f6fa;
+  --border-radius: 12px;
+  --box-shadow: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.lista-chats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid #e7e8ef;
+  border-radius: 15px;
+  padding: 13px;
+
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.avatar {
+  flex-shrink: 0;
+
+  img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.informacion {
+  flex: 1;
+  min-width: 0;
+}
+
+.cabecera-chat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+
+  strong {
+    color: #202124;
+    font-size: 13px;
+  }
+
+  .hora {
+    color: #999;
+    font-size: 10px;
+  }
+}
+
+.prenda {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 5px 0;
+}
+
+.estado {
+  color: #3952e8;
+  background: #eef0ff;
+  border-radius: 5px;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.estado.prestamo {
+  color: #ff6554;
+  background: #fff0ed;
+}
+
+.estado.completado {
+  color: #16803c;
+  background: #eaf8ef;
+}
+
+.nombre-prenda {
+  color: #3952e8;
+  font-size: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ultimo-mensaje {
+  font-size: 12px;
+  color: #777b87;
+  margin: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sin-resultados {
+  text-align: center;
+  color: #999;
+  padding: 40px 15px;
+}

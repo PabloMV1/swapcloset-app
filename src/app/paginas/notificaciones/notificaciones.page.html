@@ -1,0 +1,48 @@
+
+<ion-content class="pantalla-notificaciones">
+
+  <div class="contenedor">
+
+    <div class="cabecera">
+      <h1>Notificaciones</h1>
+      <p>Entérate de todo lo que ocurre en SwapCloset</p>
+    </div>
+
+    <h3>RECIENTES</h3>
+
+    @for (notificacion of recientes; track notificacion.titulo) {
+      <div class="notificacion">
+        <div class="icono">{{ notificacion.icono }}</div>
+
+        <div class="informacion">
+          <strong>{{ notificacion.titulo }}</strong>
+          <p>{{ notificacion.descripcion }}</p>
+          <small>{{ notificacion.fecha }}</small>
+        </div>
+      </div>
+    }
+
+    <h3>ANTERIORES</h3>
+
+    @for (notificacion of anteriores; track notificacion.titulo) {
+      <div class="notificacion">
+        <div class="icono">{{ notificacion.icono }}</div>
+
+        <div class="informacion">
+          <strong>{{ notificacion.titulo }}</strong>
+          <p>{{ notificacion.descripcion }}</p>
+          <small>{{ notificacion.fecha }}</small>
+        </div>
+      </div>
+    }
+
+    <ion-button expand="block"
+                fill="outline"
+                routerLink="/tabs/closet">
+      Volver a mi clóset
+    </ion-button>
+
+  </div>
+
+</ion-content>
+

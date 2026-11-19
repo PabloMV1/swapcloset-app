@@ -1,0 +1,122 @@
+
+<ion-content class="pantalla-publicar">
+
+  <div class="contenedor">
+
+    <h1>Sube un look</h1>
+
+    <p class="descripcion">
+      Comparte tu estilo y alarga el ciclo de tu ropa.
+    </p>
+
+    <div class="zona-fotos">
+
+      @if (foto) {
+        <img [src]="foto" alt="Foto de la prenda" class="foto-prenda">
+      } @else {
+        <div class="foto-ejemplo">
+          👕
+        </div>
+      }
+
+      <label class="subir-foto">
+        <span>📷</span>
+        Añadir foto
+
+        <input
+          type="file"
+          accept="image/*"
+          (change)="seleccionarFoto($event)"
+          hidden>
+      </label>
+
+    </div>
+
+    <div class="campo">
+      <label>Título de la prenda</label>
+
+      <ion-input
+        [(ngModel)]="titulo"
+        placeholder="Ej: Suéter retro de rayas">
+      </ion-input>
+    </div>
+
+    <div class="campo">
+      <label>Descripción e historia</label>
+
+      <ion-textarea
+        [(ngModel)]="descripcion"
+        placeholder="Cuenta algo sobre tu prenda..."
+        [rows]="4">
+      </ion-textarea>
+    </div>
+
+    <div class="fila">
+
+      <div class="campo">
+        <label>Talla</label>
+
+        <select [(ngModel)]="talla">
+          <option value="">Seleccionar</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="36">36</option>
+          <option value="38">38</option>
+          <option value="40">40</option>
+          <option value="Unica">Talla única</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label>Estado</label>
+
+        <select [(ngModel)]="estado">
+          <option value="Como nuevo">Como nuevo</option>
+          <option value="Buen estado">Buen estado</option>
+          <option value="Usado">Usado</option>
+        </select>
+      </div>
+
+    </div>
+
+    <h3>¿Cómo la compartirás?</h3>
+
+    <div class="opciones">
+
+      <div class="opcion"
+           [class.seleccionada]="tipo === 'Intercambio'"
+           (click)="tipo = 'Intercambio'">
+
+        <strong>♻ Intercambio</strong>
+        <small>Cambiar por otra prenda</small>
+
+      </div>
+
+      <div class="opcion"
+           [class.seleccionada]="tipo === 'Préstamo'"
+           (click)="tipo = 'Préstamo'">
+
+        <strong>🕒 Préstamo</strong>
+        <small>Prestar durante unos días</small>
+
+      </div>
+
+    </div>
+
+    <ion-button
+      expand="block"
+      class="boton-publicar"
+      (click)="publicar()">
+      Publicar prenda
+    </ion-button>
+
+    @if (mensaje) {
+      <p class="mensaje">{{ mensaje }}</p>
+    }
+
+  </div>
+
+</ion-content>

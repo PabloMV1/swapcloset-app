@@ -1,0 +1,188 @@
+
+.pantalla-chat {
+  --background: #f8f9fc;
+}
+
+.contenedor-chat {
+  max-width: 430px;
+  min-height: 100%;
+  margin: 0 auto;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.volver {
+  border: none;
+  background: transparent;
+  color: #202124;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: #eef0ff;
+  border-radius: 50%;
+  color: #3952e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.datos-usuario {
+  flex: 1;
+
+  strong {
+    display: block;
+    color: #202124;
+    font-size: 14px;
+  }
+
+  small {
+    color: #777b87;
+    font-size: 11px;
+  }
+}
+
+.telefono {
+  font-size: 22px;
+  color: #777b87;
+}
+
+.propuesta {
+  margin: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f0f2ff;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  > span:first-child {
+    color: #3952e8;
+    font-size: 22px;
+  }
+
+  div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  strong {
+    color: #202124;
+    font-size: 11px;
+  }
+
+  p {
+    color: #777b87;
+    font-size: 10px;
+    margin: 4px 0 0;
+  }
+}
+
+.pendiente {
+  background: white;
+  color: #3952e8;
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.mensajes {
+  flex: 1;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.fila-mensaje {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.fila-mensaje.mio {
+  justify-content: flex-end;
+}
+
+.avatar-pequeno {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #eef0ff;
+  color: #3952e8;
+  font-size: 11px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burbuja {
+  max-width: 78%;
+  padding: 12px 14px;
+  border: 1px solid #eeeeee;
+  border-radius: 13px;
+
+  background: white;
+  color: #202124;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mio .burbuja {
+  background: #3952e8;
+  color: white;
+  border-color: #3952e8;
+}
+
+.zona-escribir {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #eeeeee;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    height: 43px;
+    padding: 0 15px;
+
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: #f3f4f7;
+    color: #202124;
+    font-size: 12px;
+  }
+}
+
+.boton-enviar {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: #3952e8;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}

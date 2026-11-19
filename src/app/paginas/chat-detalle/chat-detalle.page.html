@@ -1,0 +1,77 @@
+
+<ion-content class="pantalla-chat">
+
+  <div class="contenedor-chat">
+
+    <div class="cabecera">
+
+      <button class="volver" (click)="volver()">
+        ←
+      </button>
+
+      <div class="avatar">
+        {{ inicial }}
+      </div>
+
+      <div class="datos-usuario">
+        <strong>{{ nombreUsuario }}</strong>
+        <small>🟢 En línea en el campus</small>
+      </div>
+
+      <span class="telefono">☎</span>
+
+    </div>
+
+    <div class="propuesta">
+      <span>♻</span>
+
+      <div>
+        <strong>Propuesta de trueque permanente</strong>
+        <p>{{ prenda }}</p>
+      </div>
+
+      <span class="pendiente">Pendiente</span>
+    </div>
+
+    <div class="mensajes">
+
+      @for (mensaje of mensajes; track $index) {
+
+        <div class="fila-mensaje"
+             [class.mio]="mensaje.mio">
+
+          @if (!mensaje.mio) {
+            <div class="avatar-pequeno">
+              {{ inicial }}
+            </div>
+          }
+
+          <div class="burbuja">
+            {{ mensaje.texto }}
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+    <form class="zona-escribir"
+          (ngSubmit)="enviarMensaje()">
+
+      <input
+        type="text"
+        name="mensaje"
+        [(ngModel)]="textoMensaje"
+        placeholder="Escribe un mensaje..."
+        autocomplete="off">
+
+      <button type="submit" class="boton-enviar">
+        ➤
+      </button>
+
+    </form>
+
+  </div>
+
+</ion-content>

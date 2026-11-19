@@ -1,0 +1,110 @@
+
+.pantalla-login {
+  --background: #ffffff;
+}
+
+.contenedor-login {
+  max-width: 430px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 30px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.etiqueta {
+  display: inline-block;
+  background: #eef0ff;
+  color: #3952e8;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #202124;
+  margin: 24px 0 8px;
+}
+
+.descripcion {
+  color: #777b87;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.campo {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #202124;
+  }
+
+  ion-input {
+    --background: #ffffff;
+    --padding-start: 14px;
+    --padding-end: 14px;
+    border: 1px solid #e2e4ea;
+    border-radius: 10px;
+    min-height: 48px;
+  }
+
+  small {
+    display: block;
+    color: #999999;
+    font-size: 11px;
+    margin-top: 6px;
+  }
+}
+
+.recuperar {
+  display: block;
+  color: #3952e8;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.separador {
+  text-align: center;
+  margin: 25px 0;
+  color: #999999;
+  font-size: 11px;
+}
+
+.boton-google {
+  --border-color: #dddddd;
+  --color: #202124;
+  --border-radius: 10px;
+  height: 48px;
+  text-transform: none;
+}
+
+.boton-entrar {
+  --background: #3952e8;
+  --border-radius: 12px;
+  --box-shadow: none;
+  height: 52px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.contenido-inferior p {
+  text-align: center;
+  font-size: 12px;
+  color: #777b87;
+
+  a {
+    color: #3952e8;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

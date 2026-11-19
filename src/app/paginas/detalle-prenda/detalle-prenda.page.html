@@ -1,0 +1,65 @@
+
+<ion-content class="pantalla-detalle">
+
+  <div class="contenedor">
+
+    <div class="cabecera">
+      <button (click)="volver()">←</button>
+      <strong>Detalle de prenda</strong>
+      <span>♡</span>
+    </div>
+
+    <img
+      class="foto-prenda"
+      [src]="prenda.imagen"
+      [alt]="prenda.nombre">
+
+    <div class="informacion">
+
+      <div class="etiquetas">
+        <span class="etiqueta-azul">{{ prenda.tipo }}</span>
+        <span class="etiqueta-verde">
+          Estado: {{ prenda.estado }}
+        </span>
+      </div>
+
+      <h1>{{ prenda.nombre }}</h1>
+
+      <p class="talla">Talla: {{ prenda.talla }}</p>
+
+      <p class="descripcion">
+        {{ prenda.descripcion }}
+      </p>
+
+      <div class="usuario">
+        <div class="avatar">S</div>
+
+        <div>
+          <strong>Sofía Pérez</strong>
+          <p>Estudiante de Bellas Artes</p>
+        </div>
+
+        <span>⭐ 4.9</span>
+      </div>
+
+      <ion-button
+        expand="block"
+        class="boton-principal"
+        (click)="solicitar()">
+        Proponer trueque
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        class="boton-secundario"
+        (click)="abrirChat()">
+        Hablar con Sofía
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>
+

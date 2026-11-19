@@ -1,0 +1,80 @@
+
+<ion-content class="pantalla-ajustes">
+
+  <div class="contenedor">
+
+    <h1>Ajustes</h1>
+    <p class="subtitulo">
+      Personaliza tu experiencia en SwapCloset
+    </p>
+
+    <div class="opcion" (click)="seleccionar('Cuenta')">
+      <div class="icono">👤</div>
+      <div class="texto">
+        <strong>Cuenta</strong>
+        <small>Contraseña, email y vinculación</small>
+      </div>
+      <span>›</span>
+    </div>
+
+    <div class="opcion" (click)="seleccionar('Privacidad')">
+      <div class="icono">🔒</div>
+      <div class="texto">
+        <strong>Privacidad</strong>
+        <small>Quién ve tus tallas y clóset virtual</small>
+      </div>
+      <span>›</span>
+    </div>
+
+    <div class="opcion" routerLink="/notificaciones">
+      <div class="icono">🔔</div>
+      <div class="texto">
+        <strong>Notificaciones</strong>
+        <small>Consulta tus avisos de trueque y chat</small>
+      </div>
+      <span>›</span>
+    </div>
+
+    <div class="opcion" (click)="seleccionar('Centro de ayuda')">
+      <div class="icono">ⓘ</div>
+      <div class="texto">
+        <strong>Centro de ayuda</strong>
+        <small>Preguntas frecuentes y soporte</small>
+      </div>
+      <span>›</span>
+    </div>
+
+    <div class="opcion" (click)="seleccionar('Normas de la comunidad')">
+      <div class="icono">📖</div>
+      <div class="texto">
+        <strong>Normas de la comunidad</strong>
+        <small>Reglas para mantener un intercambio seguro</small>
+      </div>
+      <span>›</span>
+    </div>
+
+    @if (apartado) {
+      <div class="informacion">
+        <strong>{{ apartado }}</strong>
+        <p>{{ descripcion }}</p>
+      </div>
+    }
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      color="danger"
+      (click)="cerrarSesion()">
+      Cerrar sesión
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      fill="clear"
+      routerLink="/tabs/closet">
+      Volver a mi clóset
+    </ion-button>
+
+  </div>
+
+</ion-content>

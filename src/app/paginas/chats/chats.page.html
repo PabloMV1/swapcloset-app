@@ -1,0 +1,65 @@
+
+<ion-content class="pantalla-chats">
+
+  <div class="contenedor">
+
+    <h1>Mensajes</h1>
+    <p class="subtitulo">Conversaciones del campus</p>
+
+    <div class="buscador">
+      <ion-searchbar
+        [(ngModel)]="busqueda"
+        placeholder="Buscar estudiante o prenda...">
+      </ion-searchbar>
+    </div>
+
+    <div class="lista-chats">
+
+      @for (chat of chatsFiltrados; track chat.id) {
+
+        <div class="chat" (click)="abrirChat(chat.id)">
+
+          <div class="avatar">
+            <img [src]="chat.foto" [alt]="chat.nombre">
+          </div>
+
+          <div class="informacion">
+
+            <div class="cabecera-chat">
+              <strong>{{ chat.nombre }}</strong>
+              <span class="hora">{{ chat.hora }}</span>
+            </div>
+
+            <div class="prenda">
+              <span class="estado"
+                    [class.prestamo]="chat.estado === 'Préstamo'"
+                    [class.completado]="chat.estado === 'Completado'">
+                {{ chat.estado }}
+              </span>
+
+              <span class="nombre-prenda">
+                {{ chat.prenda }}
+              </span>
+            </div>
+
+            <p class="ultimo-mensaje">
+              {{ chat.mensaje }}
+            </p>
+
+          </div>
+
+        </div>
+
+      } @empty {
+
+        <div class="sin-resultados">
+          <p>No hay conversaciones con ese nombre.</p>
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</ion-content>

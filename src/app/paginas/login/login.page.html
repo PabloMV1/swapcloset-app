@@ -1,0 +1,74 @@
+
+<ion-content class="pantalla-login">
+
+  <div class="contenedor-login">
+
+    <div class="contenido-superior">
+
+      <span class="etiqueta">♻ MODA CIRCULAR CAMPUS</span>
+
+      <h1>¡Hola de nuevo!</h1>
+
+      <p class="descripcion">
+        Inicia sesión para descubrir qué prendas están
+        rotando hoy en tu universidad.
+      </p>
+
+      <div class="campo">
+        <label>Email Universitario</label>
+
+        <ion-input
+          type="email"
+          placeholder="nombre@universidad.es">
+        </ion-input>
+
+        <small>
+          Usa tu correo institucional para verificar tu campus.
+        </small>
+      </div>
+
+      <div class="campo">
+        <label>Contraseña</label>
+
+        <ion-input
+          type="password"
+          placeholder="Introduce tu contraseña">
+        </ion-input>
+      </div>
+
+      <a class="recuperar">
+        ¿Olvidaste tu contraseña?
+      </a>
+
+      <div class="separador">
+        <span>O CONTINÚA CON</span>
+      </div>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        class="boton-google">
+        Acceder con Google
+      </ion-button>
+
+    </div>
+
+    <div class="contenido-inferior">
+
+      <ion-button
+        expand="block"
+        class="boton-entrar"
+        routerLink="/tabs/explorar">
+        Ingresar al clóset
+      </ion-button>
+
+      <p>
+        ¿Aún no tienes cuenta?
+        <a routerLink="/registro">Regístrate aquí</a>
+      </p>
+
+    </div>
+
+  </div>
+
+</ion-content>
